@@ -3,486 +3,1146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The CHOP — by Smash Wraps</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23080808'/%3E%3Cpath d='M14 18h36v8H28v5h17v8H28v7H14V18Z' fill='%23f5c118'/%3E%3C/svg%3E" />
-  <meta name="description" content="The CHOP by Smash Wraps — 109mm rice paper tubes with capsule-infused flavor. Four profiles, two sizes, three Chops per box. Adults 21+ where required." />
+  <title>The CHOP - by Smash Wraps</title>
+  <meta name="description" content="The CHOP by Smash Wraps - 109mm rice paper tubes with capsule-infused flavor. Four profiles, two sizes, three Chops per box. Adults 21+ where required." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23090806'/%3E%3Cpath d='M14 18h36v8H28v5h17v8H28v7H14V18Z' fill='%23f5c118'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPNJ7WF9LH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LPNJ7WF9LH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://smashcones.com/#organization",
+        "name": "Smash Cones",
+        "url": "https://smashcones.com",
+        "description": "CHOP by Smash Wraps — 109mm rice paper tubes with capsule-infused flavor. Four profiles, two sizes.",
+        "sameAs": []
+      },
+      {
+        "@type": "Product",
+        "@id": "https://smashcones.com/#product",
+        "name": "The CHOP by Smash Wraps",
+        "description": "109mm rice paper tubes with capsule-infused flavor. Four profiles, two sizes, three Chops per box. Adults 21+ where required.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Smash Wraps"
+        },
+        "category": "Rolling paper tubes",
+        "image": "https://smashcones.com/og-image.png",
+        "url": "https://smashcones.com/",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://smashcones.com/",
+          "price": "4.75",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@id": "https://smashcones.com/#organization"
+          },
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "USD"
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "US"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 1,
+                "maxValue": 3,
+                "unitCode": "DAY"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 2,
+                "maxValue": 7,
+                "unitCode": "DAY"
+              }
+            }
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "US",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 30,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+          }
+        }
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
-      --bg:     #080808;
-      --s1:     #0f0f0f;
-      --s2:     #141414;
+      --bg: #090806;
+      --ink: #f6efe1;
+      --paper: #e8dcc7;
+      --muted: #c4b69e;
+      --low: #8d7f6a;
+      --line: rgba(246, 239, 225, 0.12);
+      --line-strong: rgba(246, 239, 225, 0.22);
+      --panel: #12100c;
+      --panel-2: #17140e;
       --yellow: #f5c118;
-      --y-dim:  rgba(245,193,24,0.08);
-      --y-glow: rgba(245,193,24,0.25);
-      --text:   #a1a1aa;
-      --dim:    #52525b;
-      --border: rgba(255,255,255,0.07);
-      --white:  #ffffff;
-      /* flavor colors */
-      --pink:   #f472b6;
-      --purple: #c084fc;
-      --lime:   #a3e635;
-      --amber:  #fde68a;
+      --pink: #f472b6;
+      --purple: #b77bff;
+      --lime: #a3e635;
+      --amber: #f4d38a;
+      --shadow: rgba(0, 0, 0, 0.52);
+      --sh-card: 0 28px 60px var(--shadow);
+      --sh-hard: 6px 6px 0 rgba(0, 0, 0, 0.42);
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-    ::selection { background: var(--yellow); color: #000; }
-    ::-webkit-scrollbar { width: 3px; }
-    ::-webkit-scrollbar-thumb { background: var(--yellow); border-radius: 3px; }
-
-    /* GRAIN OVERLAY */
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--muted);
+      font-family: "IBM Plex Sans", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
     body::before {
-      content: '';
-      position: fixed; inset: 0; z-index: 9999; pointer-events: none;
-      opacity: 0.035;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 200px 200px;
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+      transform: translateZ(0);
+      will-change: transform;
+    }
+    ::selection { background: var(--yellow); color: #090806; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+
+    .page-shell {
+      position: relative;
+      min-height: 100vh;
+    }
+    .page-shell::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      transform: translateZ(0);
+      will-change: transform;
+      background:
+        linear-gradient(rgba(245, 193, 24, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 193, 24, 0.025) 1px, transparent 1px),
+        radial-gradient(ellipse 64% 44% at 82% 18%, rgba(245, 193, 24, 0.12), transparent 62%),
+        linear-gradient(116deg, #0d0b07 0%, #090806 58%, #121009 100%);
+      background-size: 84px 84px, 84px 84px, auto, auto;
     }
 
-    /* CURSOR GLOW */
-    #cursor-glow {
-      position: fixed; pointer-events: none; z-index: 9998;
-      width: 500px; height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(245,193,24,0.07) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      transition: opacity 0.4s;
-      opacity: 0;
+    .nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 2rem;
+      padding: 1rem clamp(1rem, 4vw, 2rem);
+      border-bottom: 1px solid transparent;
+      transition: background 180ms ease, border-color 180ms ease;
     }
-
-    /* NAV */
-    .nav { position: fixed; inset-block-start: 0; inset-inline: 0; z-index: 200; padding: 1.25rem 2rem; display: flex; align-items: center; justify-content: space-between; transition: all 0.4s; }
-    .nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid var(--border); }
-    .nav-brand { display: flex; flex-direction: column; gap: 0; }
-    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.12em; color: var(--white); text-decoration: none; line-height: 1; }
-    .nav-sub { font-family: 'Space Mono', monospace; font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--yellow); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--dim); text-decoration: none; transition: color 0.2s; }
+    .nav.scrolled {
+      background: rgba(9, 8, 6, 0.94);
+      border-color: var(--line);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .brand-lockup {
+      display: grid;
+      text-decoration: none;
+      width: max-content;
+    }
+    .brand-logo {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.45rem;
+      line-height: 0.95;
+      letter-spacing: 0.14em;
+      color: var(--ink);
+    }
+    .brand-logo span { color: var(--yellow); }
+    .brand-sub {
+      margin-top: 0.1rem;
+      font-family: "Space Mono", monospace;
+      font-size: 0.52rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--yellow);
+    }
+    .nav-links {
+      justify-self: center;
+      display: flex;
+      gap: clamp(1.1rem, 4vw, 2.8rem);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .nav-links a,
+    .shop-link,
+    .btn {
+      font-family: "Space Mono", monospace;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .nav-links a {
+      color: var(--low);
+      transition: color 160ms ease;
+    }
     .nav-links a:hover { color: var(--yellow); }
-    .nav-cta { font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.2em; background: var(--yellow); color: #000; padding: 0.6rem 1.4rem; border-radius: 100px; text-decoration: none; font-weight: 700; transition: all 0.25s; }
-    .nav-cta:hover { opacity: 0.85; box-shadow: 0 0 28px var(--y-glow); }
-    @media (max-width: 640px) { .nav-links { display: none; } }
+    .shop-link,
+    .btn-primary {
+      background: var(--yellow);
+      color: #090806;
+      border: 1px solid var(--yellow);
+      box-shadow: var(--sh-hard);
+    }
+    .shop-link {
+      padding: 0.7rem 1.5rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: 0.9rem 1.5rem;
+      border-radius: 0;
+      transition: transform 160ms ease, background 160ms ease, color 160ms ease, border-color 160ms ease;
+    }
+    .btn:hover { transform: translate(-2px, -2px); }
+    .btn-secondary {
+      border: 1px solid var(--line-strong);
+      color: var(--ink);
+      background: rgba(246, 239, 225, 0.02);
+      box-shadow: none;
+      opacity: 0.85;
+    }
+    .btn-secondary:hover {
+      border-color: rgba(245, 193, 24, 0.45);
+      color: var(--yellow);
+      opacity: 1;
+    }
+    .btn:focus-visible,
+    .nav a:focus-visible {
+      outline: 2px solid var(--yellow);
+      outline-offset: 4px;
+    }
 
-    /* HERO */
-    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding: 8rem 2rem 6rem; }
-    .hero-mesh {
-      position: absolute; inset: 0;
+    .section-inner {
+      width: min(100% - 2rem, 1160px);
+      margin-inline: auto;
+    }
+    .hero {
+      min-height: 94svh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 0 4.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(22rem, 1.05fr);
+      gap: clamp(2.5rem, 6vw, 6rem);
+      align-items: end;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 0.7rem;
+      align-items: center;
+      margin: 0 0 1.2rem;
+      padding: 0.42rem 0.62rem;
+      border: 1px solid rgba(245, 193, 24, 0.24);
+      color: var(--yellow);
+      font-family: "Space Mono", monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      background: rgba(245, 193, 24, 0.055);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 0.45rem;
+      height: 0.45rem;
+      background: var(--yellow);
+    }
+    .hero-kicker {
+      margin: 0 0 0.55rem;
+      font-family: "Space Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--low);
+    }
+    h1,
+    h2,
+    .display {
+      font-family: "Bebas Neue", sans-serif;
+      color: var(--ink);
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      max-width: 8ch;
+      font-size: clamp(6.2rem, 15vw, 13rem);
+      line-height: 0.78;
+      letter-spacing: 0.01em;
+    }
+    h1 .accent { color: var(--yellow); }
+    .hero-copy {
+      margin: 1.5rem 0 0;
+      max-width: 31rem;
+      font-size: clamp(1rem, 1.25vw, 1.12rem);
+      line-height: 1.8;
+      color: var(--paper);
+    }
+    .hero-copy span { color: var(--yellow); }
+    .mobile-hero-lineup {
+      display: none;
+      align-items: flex-end;
+      gap: 0.25rem;
+      margin: 1.1rem 0 0;
+      padding: 0.8rem 0.6rem 0.25rem;
+      border: 1px solid var(--line);
       background:
-        radial-gradient(ellipse 60% 55% at 15% 60%, rgba(245,193,24,0.06), transparent 60%),
-        radial-gradient(ellipse 45% 45% at 85% 30%, rgba(196,132,252,0.05), transparent 55%),
-        radial-gradient(ellipse 50% 40% at 50% 90%, rgba(164,230,53,0.04), transparent 60%),
-        linear-gradient(to bottom, #0d0d0d, var(--bg));
+        radial-gradient(ellipse at 54% 58%, rgba(245, 193, 24, 0.14), transparent 58%),
+        rgba(246, 239, 225, 0.02);
+      transform: rotate(-1deg);
     }
-    .hero-grid {
-      position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 80px 80px;
-      -webkit-mask: radial-gradient(ellipse 80% 80% at center, black 10%, transparent 70%);
-              mask: radial-gradient(ellipse 80% 80% at center, black 10%, transparent 70%);
+    .mobile-hero-lineup img {
+      width: min(21vw, 4.75rem);
+      max-height: 12rem;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 16px var(--shadow));
     }
-    .hero-inner { position: relative; z-index: 2; max-width: 72rem; margin-inline: auto; width: 100%; display: grid; gap: 4rem; grid-template-columns: 1fr; align-items: center; }
-    @media (min-width: 900px) { .hero-inner { grid-template-columns: 1.2fr 0.8fr; gap: 6rem; } }
+    .mobile-hero-lineup img:nth-child(1) { transform: translateY(0.35rem) rotate(-5deg); }
+    .mobile-hero-lineup img:nth-child(2) { transform: rotate(-1deg); }
+    .mobile-hero-lineup img:nth-child(3) { transform: translateY(0.15rem) rotate(2deg); }
+    .mobile-hero-lineup img:nth-child(4) { transform: translateY(0.45rem) rotate(5deg); }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+    .spec-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.5rem;
+      margin-top: 2.25rem;
+      max-width: 33rem;
+    }
+    .spec {
+      border-top: 1px solid var(--line-strong);
+      padding-top: 0.7rem;
+    }
+    .spec b {
+      display: block;
+      color: var(--ink);
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.8rem;
+      line-height: 1;
+      font-weight: 400;
+    }
+    .spec span {
+      display: block;
+      margin-top: 0.25rem;
+      color: var(--low);
+      font-family: "Space Mono", monospace;
+      font-size: 0.52rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      line-height: 1.45;
+    }
 
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      border: 1px solid rgba(245,193,24,0.2); background: var(--y-dim); border-radius: 100px;
-      padding: 0.4rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.58rem;
-      text-transform: uppercase; letter-spacing: 0.25em; color: var(--yellow);
-      margin-bottom: 1.5rem; animation: fadeUp 0.8s ease both;
+    .hero-product {
+      position: relative;
+      align-self: center;
+      min-height: clamp(24rem, 40vw, 34rem);
+      display: grid;
+      align-items: end;
     }
-    .hero-badge-dot { width: 6px; height: 6px; background: var(--yellow); border-radius: 50%; animation: pulse 2s ease infinite; }
-    .hero-h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(5rem, 16vw, 12rem);
-      line-height: 0.88; letter-spacing: -0.01em; color: var(--white);
-      margin-bottom: 1rem; animation: fadeUp 0.8s 0.1s ease both;
-    }
-    .hero-h1 .accent { color: var(--yellow); }
-    .hero-by { font-family: 'Space Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--dim); margin-bottom: 0.75rem; animation: fadeUp 0.8s 0.05s ease both; }
-    .hero-desc { max-width: 500px; font-size: 1rem; line-height: 1.8; color: var(--text); margin-bottom: 2rem; animation: fadeUp 0.8s 0.2s ease both; }
-    .hero-desc strong { color: var(--white); }
-    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.8s 0.3s ease both; margin-bottom: 2.5rem; }
-    .btn-y { display: inline-block; background: var(--yellow); color: #000; font-family: 'Space Mono', monospace; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; padding: 1rem 2rem; border-radius: 100px; text-decoration: none; transition: all 0.25s; box-shadow: 0 8px 24px var(--y-glow); }
-    .btn-y:hover { box-shadow: 0 12px 40px var(--y-glow); transform: translateY(-2px); }
-    .btn-ghost { display: inline-block; border: 1px solid var(--border); color: var(--text); font-family: 'Space Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; padding: 1rem 2rem; border-radius: 100px; text-decoration: none; transition: all 0.25s; }
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.2); color: var(--white); }
-    .hero-meta { font-family: 'Space Mono', monospace; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--dim); animation: fadeUp 0.8s 0.4s ease both; }
-
-    /* HERO VISUAL */
-    .hero-product { position: relative; animation: fadeUp 0.8s 0.3s ease both; }
-    .product-stage {
-      position: relative; min-height: clamp(30rem, 45vw, 39rem); isolation: isolate;
-      display: grid; place-items: center; margin-inline: auto;
-    }
-    .product-stage::before {
-      content: ''; position: absolute; left: 50%; bottom: 10%; z-index: -2;
-      width: min(110%, 38rem); height: clamp(10rem, 18vw, 15rem); border-radius: 999px;
+    .hero-product::before {
+      content: "";
+      position: absolute;
+      inset: auto 1rem 2.4rem;
+      height: clamp(10rem, 18vw, 16rem);
+      border: 1px solid rgba(246, 239, 225, 0.1);
       background:
-        radial-gradient(ellipse at 44% 38%, rgba(245,193,24,0.26), transparent 48%),
-        radial-gradient(ellipse at 72% 60%, rgba(244,114,182,0.18), transparent 54%),
-        linear-gradient(90deg, rgba(255,255,255,0.055), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.07);
-      box-shadow: 0 30px 100px rgba(0,0,0,0.62), 0 0 78px rgba(245,193,24,0.12);
-      transform: translateX(-50%) rotate(-7deg);
-    }
-    .product-stage::after {
-      content: 'THE CHOP'; position: absolute; right: 4%; top: 15%; z-index: 3;
-      font-family: 'Space Mono', monospace; font-size: 0.56rem; font-weight: 700;
-      letter-spacing: 0.22em; color: #000; background: var(--yellow);
-      border-radius: 999px; padding: 0.72rem 0.95rem; box-shadow: 0 0 34px var(--y-glow);
+        linear-gradient(115deg, rgba(246, 239, 225, 0.08), rgba(246, 239, 225, 0.01)),
+        radial-gradient(ellipse at 44% 42%, rgba(245, 193, 24, 0.18), transparent 54%);
       transform: rotate(-6deg);
+      box-shadow: var(--sh-card);
     }
-    .product-model {
-      width: min(144%, 48rem); height: clamp(30rem, 44vw, 39rem);
-      --poster-color: transparent; filter: drop-shadow(0 36px 34px rgba(0,0,0,0.58));
-      transform: translateX(1rem) rotate(1deg);
+    .hero-lineup {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: clamp(0.15rem, 1vw, 0.65rem);
+      transform: rotate(-1deg);
     }
-    .product-stats { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0.85rem; margin-top: -1.5rem; position: relative; z-index: 4; }
-    .stat-card {
-      background: var(--s1); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem;
-      transition: border-color 0.3s, box-shadow 0.3s;
+    .hero-lineup img {
+      width: clamp(5.7rem, 8.4vw, 8.9rem);
+      max-height: clamp(18rem, 28vw, 25rem);
+      object-fit: contain;
+      filter: drop-shadow(var(--sh-card));
     }
-    .stat-card:hover { border-color: rgba(245,193,24,0.2); box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
-    .stat-card.wide { grid-column: span 2; }
-    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; line-height: 1; color: var(--yellow); letter-spacing: 0.02em; }
-    .stat-label { font-family: 'Space Mono', monospace; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--dim); margin-top: 0.25rem; }
-    .stat-desc { font-size: 0.8rem; color: var(--text); margin-top: 0.5rem; line-height: 1.5; }
-    .product-stats .stat-card { padding: 1rem; min-height: 5.8rem; }
-    .product-stats .stat-num { font-size: 2.8rem; }
-    .product-stats .stat-label { letter-spacing: 0.18em; }
-    .product-stats .stat-desc { display: none; }
-
-    /* MARQUEE */
-    .mq-wrap { overflow: hidden; border-block: 1px solid var(--border); padding: 0.8rem 0; background: var(--s1); -webkit-mask: linear-gradient(90deg, transparent, #fff 8%, #fff 92%, transparent); mask: linear-gradient(90deg, transparent, #fff 8%, #fff 92%, transparent); }
-    .mq-track { display: flex; width: max-content; animation: mq 28s linear infinite; }
-    .mq-item { display: flex; align-items: center; gap: 0.75rem; margin-inline: 2rem; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.2em; color: var(--dim); }
-    .mq-dot { width: 5px; height: 5px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
-    .mq-dot.y { background: var(--yellow); }
-    .mq-dot.p { background: var(--pink); }
-    .mq-dot.v { background: var(--purple); }
-    .mq-dot.l { background: var(--lime); }
-    .mq-dot.a { background: var(--amber); }
-    @keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-    /* SECTION COMMONS */
-    .section-y { padding: 6rem 2rem; }
-    .section-inner { max-width: 72rem; margin-inline: auto; }
-    .section-label { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
-    .section-line { width: 28px; height: 2px; background: var(--yellow); flex-shrink: 0; }
-    .section-tag { font-family: 'Space Mono', monospace; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--yellow); }
-    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); color: var(--white); letter-spacing: 0.02em; line-height: 1; margin-bottom: 1rem; }
-
-    /* FLAVORS */
-    .flavors { background: var(--s1); border-block: 1px solid var(--border); }
-    .flavor-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); margin-top: 3rem; }
-    .flavor-card {
-      position: relative; border-radius: 20px; border: 1px solid var(--border);
-      background: var(--bg); padding: 1.75rem; overflow: hidden;
-      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-      cursor: default;
+    .hero-lineup img:nth-child(1) { transform: translateY(0.7rem) rotate(-5deg); }
+    .hero-lineup img:nth-child(2) { transform: translateY(-0.1rem) rotate(-1deg); }
+    .hero-lineup img:nth-child(3) { transform: translateY(0.15rem) rotate(2deg); }
+    .hero-lineup img:nth-child(4) { transform: translateY(0.85rem) rotate(5deg); }
+    .product-tag {
+      position: absolute;
+      top: 11%;
+      right: 3%;
+      z-index: 4;
+      padding: 0.68rem 0.82rem;
+      background: var(--yellow);
+      color: #090806;
+      font-family: "Space Mono", monospace;
+      font-size: 0.54rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transform: rotate(-5deg);
+      box-shadow: var(--sh-hard);
     }
-    .flavor-card:hover { transform: translateY(-5px); box-shadow: 0 24px 48px rgba(0,0,0,0.5); }
-    .flavor-card::before { content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity 0.3s; border-radius: 20px; }
-    .flavor-card:hover::before { opacity: 1; }
-    .flavor-card.watermelon { --fc: var(--pink); }
-    .flavor-card.passionfruit { --fc: var(--purple); }
-    .flavor-card.pineapple { --fc: var(--lime); }
-    .flavor-card.vanilla { --fc: var(--amber); }
-    .flavor-card:hover { border-color: color-mix(in srgb, var(--fc) 40%, transparent); box-shadow: 0 24px 48px rgba(0,0,0,0.4), 0 0 60px color-mix(in srgb, var(--fc) 8%, transparent); }
-    .flavor-card::before { background: radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--fc) 10%, transparent), transparent 60%); }
-    .flavor-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--fc); margin-bottom: 1.25rem; box-shadow: 0 0 16px color-mix(in srgb, var(--fc) 60%, transparent); }
-    .flavor-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.75rem; letter-spacing: 0.06em; color: var(--fc); margin-bottom: 0.3rem; }
-    .flavor-sub { font-family: 'Space Mono', monospace; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--dim); margin-bottom: 1rem; }
-    .flavor-body { font-size: 0.875rem; line-height: 1.7; color: var(--text); }
-    .flavor-prices { margin-top: 1.25rem; display: flex; gap: 1rem; }
-    .flavor-price { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--white); }
-    .flavor-price span { color: var(--dim); font-size: 0.6rem; display: block; margin-top: 0.1rem; }
 
-    /* HOW IT WORKS */
-    .how-grid { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr 1fr; margin-top: 3rem; }
-    @media (max-width: 768px) { .how-grid { grid-template-columns: 1fr; } }
-    .how-card {
-      background: var(--s1); border: 1px solid var(--border); border-radius: 16px; padding: 2rem;
-      transition: border-color 0.3s;
+    .retail-proof {
+      padding: 3.4rem 0;
+      border-bottom: 1px solid var(--line);
+      background: #0b0906;
     }
-    .how-card:hover { border-color: rgba(245,193,24,0.15); }
-    .how-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: rgba(245,193,24,0.15); line-height: 1; margin-bottom: 1rem; }
-    .how-title { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
-    .how-body { font-size: 0.875rem; line-height: 1.7; color: var(--text); }
+    .proof-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.78fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+    .proof-image {
+      border: 1px solid var(--line);
+      background: #020202;
+      padding: 0.75rem;
+      transform: rotate(-1deg);
+    }
+    .proof-image img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+    .proof-copy {
+      display: grid;
+      gap: 1rem;
+    }
+    .proof-copy p {
+      margin: 0;
+      line-height: 1.75;
+      max-width: 34rem;
+    }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0 0 0.65rem;
+      color: var(--yellow);
+      font-family: "Space Mono", monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+    .section-label::before {
+      content: "";
+      width: 2rem;
+      height: 2px;
+      background: var(--yellow);
+    }
+    .section-title {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.88;
+      letter-spacing: 0.02em;
+    }
+    .section-lede {
+      max-width: 34rem;
+      margin: 1rem 0 0;
+      color: var(--paper);
+      line-height: 1.75;
+      font-size: 1rem;
+    }
 
-    /* CTA */
-    .cta-section { position: relative; overflow: hidden; text-align: center; }
-    .cta-mesh { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(245,193,24,0.05), transparent 65%), var(--bg); }
-    .cta-inner { position: relative; z-index: 2; }
-    .cta-h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 12vw, 9rem); color: var(--white); line-height: 0.88; letter-spacing: 0.01em; margin-bottom: 1.5rem; }
-    .cta-h2 span { color: var(--yellow); }
-    .cta-sub { font-size: 1rem; color: var(--text); line-height: 1.7; margin-bottom: 2rem; max-width: 440px; margin-inline: auto; }
-    .prices-strip { display: inline-flex; gap: 2rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; }
-    .price-item { font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; }
-    .price-item strong { font-size: 1.1rem; color: var(--yellow); font-weight: 700; display: block; margin-bottom: 0.15rem; }
-    .price-item em { color: var(--dim); font-style: normal; font-size: 0.6rem; }
-    .legal { margin-top: 3rem; font-family: 'Space Mono', monospace; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--dim); }
+    .flavors {
+      padding: 6.4rem 0;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+    .flavor-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 3rem;
+    }
+    .flavor-note {
+      max-width: 23rem;
+      padding: 1rem 0 0;
+      border-top: 1px solid var(--line);
+      color: var(--low);
+      font-family: "Space Mono", monospace;
+      font-size: 0.64rem;
+      letter-spacing: 0.12em;
+      line-height: 1.75;
+      text-transform: uppercase;
+    }
+    .flavor-list {
+      display: grid;
+      gap: 0.9rem;
+    }
+    .flavor-row {
+      --fc: var(--yellow);
+      position: relative;
+      display: grid;
+      grid-template-columns: 7.5rem minmax(0, 1fr) minmax(15rem, 22rem);
+      min-height: 13.6rem;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, color-mix(in srgb, var(--fc) 9%, transparent), transparent 34%),
+        linear-gradient(180deg, rgba(246, 239, 225, 0.035), rgba(246, 239, 225, 0.005));
+      overflow: hidden;
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+    .flavor-row:hover {
+      border-color: color-mix(in srgb, var(--fc) 58%, transparent);
+      transform: translateX(0.25rem);
+    }
+    .flavor-row.watermelon { --fc: var(--pink); }
+    .flavor-row.passionfruit { --fc: var(--purple); }
+    .flavor-row.pineapple { --fc: var(--lime); }
+    .flavor-row.vanilla { --fc: var(--amber); }
+    .flavor-index {
+      display: grid;
+      align-content: start;
+      gap: 0.8rem;
+      padding: 1.5rem;
+      border-right: 1px solid var(--line);
+    }
+    .flavor-chip {
+      width: 0.82rem;
+      height: 0.82rem;
+      background: var(--fc);
+      box-shadow: 0 0 0 5px color-mix(in srgb, var(--fc) 12%, transparent);
+    }
+    .flavor-index span {
+      font-family: "Space Mono", monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: color-mix(in srgb, var(--fc) 74%, var(--paper));
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+    .flavor-copy {
+      padding: 1.5rem clamp(1rem, 3vw, 2.3rem);
+      align-self: center;
+    }
+    .flavor-name {
+      margin: 0;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(2.3rem, 5vw, 4.6rem);
+      line-height: 0.9;
+      letter-spacing: 0.03em;
+      color: color-mix(in srgb, var(--fc) 82%, var(--ink));
+      text-transform: uppercase;
+    }
+    .flavor-sub {
+      margin: 0.75rem 0 0;
+      color: var(--low);
+      font-family: "Space Mono", monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .flavor-copy p {
+      margin: 1.1rem 0 0;
+      max-width: 35rem;
+      color: var(--paper);
+      line-height: 1.65;
+    }
+    .flavor-price-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      font-family: "Space Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    .flavor-price-line span {
+      color: var(--low);
+    }
+    .flavor-art {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      border-left: 1px solid var(--line);
+      background:
+        radial-gradient(ellipse at 55% 58%, color-mix(in srgb, var(--fc) 20%, transparent), transparent 56%),
+        #0b0906;
+    }
+    .flavor-art::after {
+      content: attr(data-note);
+      position: absolute;
+      right: 1rem;
+      bottom: 0.8rem;
+      color: color-mix(in srgb, var(--fc) 74%, var(--paper));
+      font-family: "Space Mono", monospace;
+      font-size: 0.54rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .flavor-box {
+      width: 5.7rem;
+      max-height: 11.7rem;
+      object-fit: contain;
+      transform: rotate(-6deg);
+      filter: drop-shadow(0 22px 20px var(--shadow));
+    }
+    .flavor-icon {
+      width: min(9rem, 42%);
+      max-height: 10.3rem;
+      object-fit: contain;
+      transform: rotate(4deg);
+      filter: drop-shadow(0 18px 18px var(--shadow));
+    }
 
-    /* FOOTER */
-    .footer { border-top: 1px solid var(--border); padding: 3rem 2rem; }
-    .footer-inner { max-width: 72rem; margin-inline: auto; display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; align-items: center; }
-    .footer-brand { font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem; color: var(--white); letter-spacing: 0.15em; }
+    .mechanism {
+      padding: 6.4rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .mechanism-grid {
+      display: grid;
+      grid-template-columns: minmax(16rem, 0.72fr) minmax(0, 1fr);
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: start;
+    }
+    .mechanism-steps {
+      display: grid;
+      border-top: 1px solid var(--line);
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 5rem minmax(0, 1fr);
+      gap: 1rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .step-num {
+      color: rgba(245, 193, 24, 0.34);
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 3.4rem;
+      line-height: 0.85;
+    }
+    .step h3 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.05rem;
+    }
+    .step p {
+      margin: 0.45rem 0 0;
+      line-height: 1.72;
+    }
+    .mechanism-proof {
+      display: grid;
+      gap: 1rem;
+      padding: 1.15rem;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .mechanism-proof img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #020202;
+    }
+    .proof-stat {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+    }
+    .proof-stat div {
+      padding: 1rem 0.85rem 0.2rem;
+      border-right: 1px solid var(--line);
+    }
+    .proof-stat div:last-child { border-right: 0; }
+    .proof-stat b {
+      display: block;
+      color: var(--yellow);
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2.2rem;
+      line-height: 1;
+      font-weight: 400;
+    }
+    .proof-stat span {
+      display: block;
+      margin-top: 0.3rem;
+      color: var(--low);
+      font-family: "Space Mono", monospace;
+      font-size: 0.54rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .buy-section {
+      padding: 6.4rem 0;
+      background:
+        linear-gradient(90deg, rgba(245, 193, 24, 0.07), transparent 34%),
+        var(--bg);
+    }
+    .buy-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.72fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+    .buy-panel {
+      border-left: 2px solid var(--yellow);
+      padding-left: clamp(1rem, 3vw, 2rem);
+    }
+    .buy-panel h2 {
+      margin: 0;
+      font-size: clamp(4rem, 10vw, 9rem);
+      line-height: 0.82;
+    }
+    .buy-panel p {
+      margin: 1.2rem 0 0;
+      max-width: 34rem;
+      color: var(--paper);
+      line-height: 1.7;
+    }
+    .buy-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.6rem;
+    }
+    .price-ledger {
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .ledger-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      padding: 1rem 1.1rem;
+      border-bottom: 1px solid var(--line);
+      font-family: "Space Mono", monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--low);
+    }
+    .ledger-row:last-child { border-bottom: 0; }
+    .ledger-row b {
+      color: var(--ink);
+      font-weight: 700;
+    }
+    .ledger-row strong {
+      color: var(--yellow);
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 2.6rem 0;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      color: var(--low);
+      font-family: "Space Mono", monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .footer-brand {
+      color: var(--ink);
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.13em;
+    }
     .footer-brand span { color: var(--yellow); }
-    .footer-meta { font-family: 'Space Mono', monospace; font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--dim); text-align: right; }
 
-    /* REVEAL */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)} }
-    @media (max-width: 900px) {
-      .product-stage { min-height: 32rem; margin-top: -1rem; }
-      .product-model { width: 100%; height: 32rem; transform: none; }
-      .product-stats { grid-template-columns: 1fr 1fr; margin-top: 0; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 620ms cubic-bezier(0.22, 1, 0.36, 1), transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
     }
-    @media (max-width: 640px) {
-      .product-stage { min-height: 27rem; }
-      .product-model { height: 27rem; }
-      .product-stats { grid-template-columns: 1fr; }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 920px) {
+      .nav {
+        grid-template-columns: auto auto;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero {
+        min-height: auto;
+        padding-top: 7rem;
+      }
+      .hero-layout,
+      .proof-layout,
+      .mechanism-grid,
+      .buy-layout {
+        grid-template-columns: 1fr;
+      }
+      .hero-product {
+        min-height: 23rem;
+      }
+      .flavor-head {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+      .flavor-row {
+        grid-template-columns: 4.2rem minmax(0, 1fr);
+      }
+      .flavor-art {
+        grid-column: 1 / -1;
+        min-height: 12.8rem;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        order: -1;
+      }
+      .flavor-index {
+        grid-row: 2;
+      }
+      .flavor-copy {
+        grid-row: 2;
+      }
+    }
+    @media (max-width: 620px) {
+      .nav {
+        padding-inline: 1rem;
+      }
+      .shop-link {
+        padding-inline: 0.9rem;
+      }
+      h1 {
+        font-size: clamp(5.1rem, 27vw, 7.2rem);
+      }
+      .hero-copy {
+        font-size: 1rem;
+      }
+      .spec-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .hero-lineup img {
+        width: 4.65rem;
+      }
+      .product-tag {
+        top: 1rem;
+      }
+      .hero-product {
+        display: none;
+      }
+      .mobile-hero-lineup {
+        display: flex;
+      }
+      .section-title {
+        font-size: clamp(3rem, 16vw, 4.4rem);
+      }
+      .flavor-row {
+        min-height: auto;
+      }
+      .flavor-copy {
+        padding: 1.15rem;
+      }
+      .flavor-name {
+        font-size: 2.75rem;
+      }
+      .flavor-box {
+        width: 4.7rem;
+        max-height: 10rem;
+      }
+      .flavor-icon {
+        width: min(10rem, 48%);
+        max-height: 9.4rem;
+      }
+      .proof-stat,
+      .price-ledger {
+        grid-template-columns: 1fr;
+      }
+      .proof-stat {
+        display: grid;
+      }
+      .proof-stat div {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .proof-stat div:last-child {
+        border-bottom: 0;
+      }
+      .footer-inner {
+        display: grid;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
 <body>
+  <main class="page-shell">
+    <nav class="nav" id="nav" aria-label="Primary navigation">
+      <a href="#" class="brand-lockup">
+        <span class="brand-logo">SMASH<span>WRAPS</span></span>
+        <span class="brand-sub">The CHOP</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#flavors">Flavors</a></li>
+        <li><a href="#mechanism">Mechanism</a></li>
+        <li><a href="/learn/">Learn</a></li>
+        <li><a href="#buy">Shop</a></li>
+      </ul>
+      <a href="/shop" class="shop-link">Shop now</a>
+    </nav>
 
-  <!-- cursor glow -->
-  <div id="cursor-glow"></div>
-
-  <nav class="nav" id="nav">
-    <a href="#" class="nav-brand" style="text-decoration:none;">
-      <span class="nav-logo">SMASH<span style="color:var(--yellow)">WRAPS</span></span>
-      <span class="nav-sub">The CHOP</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#flavors">Flavors</a></li>
-      <li><a href="#how">How it works</a></li>
-    </ul>
-    <a href="https://www.smashwraps.com/shop" class="nav-cta">Shop now</a>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-mesh"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-inner section-inner">
-      <div>
-        <div class="hero-badge"><span class="hero-badge-dot"></span>Patent pending · Adults 21+ where required</div>
-        <p class="hero-by">By Smash Wraps</p>
-        <h1 class="hero-h1">RICE<br/><span class="accent">PAPER</span><br/>TUBES</h1>
-        <p class="hero-desc">
-          <strong>Flavor where you want it</strong> — locked in the capsule tip, not sprayed on the sheet.
-          A consistent 109mm Cali-style ritual: three Chops per box, four flavor-forward profiles,
-          1g or 2g.
-        </p>
-        <div class="hero-ctas">
-          <a href="https://www.smashwraps.com/shop" class="btn-y">Shop all flavors</a>
-          <a href="#how" class="btn-ghost">How the capsule works</a>
+    <section class="hero" id="hero">
+      <div class="section-inner hero-layout">
+        <div class="hero-copy-block">
+          <p class="eyebrow reveal">Patent pending - adults 21+</p>
+          <p class="hero-kicker reveal">By Smash Wraps</p>
+          <h1 class="reveal">THE<br><span class="accent">CHOP</span></h1>
+          <div class="mobile-hero-lineup reveal" aria-label="The CHOP product boxes">
+            <img src="assets/images/iced-watermelon-chops.png" alt="Iced Watermelon CHOP box" width="410" height="1024" loading="eager" fetchpriority="high" decoding="async" />
+            <img src="assets/images/passion-fruit-chops.png" alt="Passion Fruit CHOP box" width="403" height="1024" loading="eager" decoding="async" />
+            <img src="assets/images/pineapple-chops.png" alt="Pineapple CHOP box" width="414" height="1024" loading="eager" decoding="async" />
+            <img src="assets/images/vanilla-chops.png" alt="Vanilla CHOP box" width="417" height="1024" loading="eager" decoding="async" />
+          </div>
+          <p class="hero-copy reveal">
+            Rice-paper tubes with capsule flavor in the tip. Pack your own blend, pinch the capsule, and keep the sheet clean.
+            <span>No sprayed wrap coating.</span>
+          </p>
+          <div class="hero-actions reveal">
+            <a class="btn btn-primary" href="/shop">Shop retail boxes</a>
+            <a class="btn btn-secondary" href="/wholesale">Wholesale cases</a>
+          </div>
+          <div class="spec-strip reveal" aria-label="Product specs">
+            <div class="spec"><b>109</b><span>mm straight tube</span></div>
+            <div class="spec"><b>3</b><span>Chops per box</span></div>
+            <div class="spec"><b>1g/2g</b><span>two fill sizes</span></div>
+            <div class="spec"><b>4</b><span>flavor tips</span></div>
+          </div>
         </div>
-        <p class="hero-meta">Patent pending &nbsp;·&nbsp; 4 flavors &nbsp;·&nbsp; 2 sizes &nbsp;·&nbsp; 3 Chops / box</p>
-      </div>
-      <div class="hero-product reveal" aria-label="The CHOP product render">
-        <div class="product-stage">
-          <model-viewer
-            class="product-model"
-            src="assets/ChopAnimation-single-full-pruned.glb"
-            alt="The CHOP capsule-infused rice paper tube product render"
-            camera-orbit="-8deg 66deg 0.72m"
-            camera-target="-0.03m 0.13m 0.02m"
-            field-of-view="15deg"
-            exposure="1.05"
-            shadow-intensity="0.6"
-            scale="5.4 5.4 5.4"
-            interaction-prompt="none"
-            touch-action="pan-y"
-            loading="eager"
-            reveal="auto"
-            autoplay>
-          </model-viewer>
-        </div>
-        <div class="product-stats">
-          <div class="stat-card">
-            <div class="stat-num">3</div>
-            <div class="stat-label">Chops / box</div>
-            <div class="stat-desc">Each box is a single flavor — all three wrapped and ready.</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">4</div>
-            <div class="stat-label">Flavor profiles</div>
-            <div class="stat-desc">Iced Watermelon, Passion Fruit, Pineapple, Vanilla.</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">109</div>
-            <div class="stat-label">mm length</div>
-            <div class="stat-desc">Same Cali-style length class as Vibes 1g/2g.</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">2</div>
-            <div class="stat-label">Sizes: 1g &amp; 2g</div>
-            <div class="stat-desc">Rice paper straight tubes. Your blend, your pace.</div>
+        <div class="hero-product reveal" aria-label="The CHOP product boxes">
+          <span class="product-tag">Capsule tip</span>
+          <div class="hero-lineup">
+            <img src="assets/images/iced-watermelon-chops.png" alt="Iced Watermelon CHOP box" width="410" height="1024" loading="eager" fetchpriority="high" decoding="async" />
+            <img src="assets/images/passion-fruit-chops.png" alt="Passion Fruit CHOP box" width="403" height="1024" loading="eager" decoding="async" />
+            <img src="assets/images/pineapple-chops.png" alt="Pineapple CHOP box" width="414" height="1024" loading="eager" decoding="async" />
+            <img src="assets/images/vanilla-chops.png" alt="Vanilla CHOP box" width="417" height="1024" loading="eager" decoding="async" />
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MARQUEE -->
-  <div class="mq-wrap">
-    <div class="mq-track" id="mq-track"></div>
-  </div>
+    <section class="retail-proof" aria-labelledby="proof-title">
+      <div class="section-inner proof-layout">
+        <div class="proof-image reveal">
+          <img src="assets/images/all-case-boxes-chops.jpg" alt="Smash Wraps CHOP case boxes across flavor profiles" width="1024" height="576" loading="lazy" decoding="async" />
+        </div>
+        <div class="proof-copy reveal">
+          <p class="section-label">Counter-ready</p>
+          <h2 class="section-title" id="proof-title">Retail box first. Gimmick last.</h2>
+          <p>
+            The package has to read at a register before anyone gets the capsule story. Black box, loud flavor band, short spec stack:
+            flavor, size, three Chops.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <!-- FLAVORS -->
-  <section class="flavors section-y" id="flavors">
-    <div class="section-inner">
-      <div class="section-label reveal"><span class="section-line"></span><span class="section-tag">Four profiles</span></div>
-      <h2 class="section-title reveal">FLAVOR LINEUP</h2>
-      <p class="reveal" style="max-width:520px;font-size:0.95rem;line-height:1.8;">Capsule-infused — flavor is in the tip, not sprayed on the sheet. Consistent hit, first to last.</p>
-      <div class="flavor-grid">
-        <div class="flavor-card watermelon reveal">
-          <div class="flavor-dot"></div>
-          <div class="flavor-name">Iced Watermelon</div>
-          <div class="flavor-sub">Capsule infused · Rice paper</div>
-          <p class="flavor-body">Cool, clean watermelon — refreshing on the inhale, locked in the capsule so every Chop hits the same.</p>
-          <div class="flavor-prices">
-            <div class="flavor-price">$4.75 <span>1g · 3-pack</span></div>
-            <div class="flavor-price">$5.00 <span>2g · 3-pack</span></div>
+    <section class="flavors" id="flavors">
+      <div class="section-inner">
+        <div class="flavor-head">
+          <div class="reveal">
+            <p class="section-label">Four profiles</p>
+            <h2 class="section-title">Choose the tip.</h2>
+            <p class="section-lede">Same rice-paper tube. Different capsule. Flavor stays in the tip instead of coating the sheet.</p>
           </div>
+          <p class="flavor-note reveal">Retail: one flavor, one size, three Chops per box. Pricing shown for direct single-box buys.</p>
         </div>
-        <div class="flavor-card passionfruit reveal">
-          <div class="flavor-dot"></div>
-          <div class="flavor-name">Passion Fruit</div>
-          <div class="flavor-sub">Capsule infused · Rice paper</div>
-          <p class="flavor-body">Tropical and bold — passion fruit with a clean finish. One of the standout profiles in the lineup.</p>
-          <div class="flavor-prices">
-            <div class="flavor-price">$4.75 <span>1g · 3-pack</span></div>
-            <div class="flavor-price">$5.00 <span>2g · 3-pack</span></div>
+
+        <div class="flavor-list">
+          <article class="flavor-row watermelon reveal">
+            <div class="flavor-index"><i class="flavor-chip"></i><span>Cold snap</span></div>
+            <div class="flavor-copy">
+              <h3 class="flavor-name">Iced Watermelon</h3>
+              <p class="flavor-sub">Capsule infused / rice paper</p>
+              <p>Clean watermelon with a cool edge. For smokers who want flavor without syrupy wrap coating.</p>
+              <div class="flavor-price-line"><strong>$4.75 <span>1g</span></strong><strong>$5.00 <span>2g</span></strong></div>
+            </div>
+            <div class="flavor-art" data-note="Watermelon">
+              <img class="flavor-box" src="assets/images/iced-watermelon-chops.png" alt="Iced Watermelon CHOP box" width="410" height="1024" loading="lazy" decoding="async" />
+              <img class="flavor-icon" src="assets/images/flavor-iced-watermelon.png" alt="Iced Watermelon flavor artwork" width="1024" height="863" loading="lazy" decoding="async" />
+            </div>
+          </article>
+
+          <article class="flavor-row passionfruit reveal">
+            <div class="flavor-index"><i class="flavor-chip"></i><span>Tart pulp</span></div>
+            <div class="flavor-copy">
+              <h3 class="flavor-name">Passion Fruit</h3>
+              <p class="flavor-sub">Capsule infused / rice paper</p>
+              <p>Tangy, round, and loud enough to read through the session without burying your blend.</p>
+              <div class="flavor-price-line"><strong>$4.75 <span>1g</span></strong><strong>$5.00 <span>2g</span></strong></div>
+            </div>
+            <div class="flavor-art" data-note="Passion">
+              <img class="flavor-box" src="assets/images/passion-fruit-chops.png" alt="Passion Fruit CHOP box" width="403" height="1024" loading="lazy" decoding="async" />
+              <img class="flavor-icon" src="assets/images/flavor-passion-fruit.png" alt="Passion Fruit flavor artwork" width="1024" height="830" loading="lazy" decoding="async" />
+            </div>
+          </article>
+
+          <article class="flavor-row pineapple reveal">
+            <div class="flavor-index"><i class="flavor-chip"></i><span>Sharp finish</span></div>
+            <div class="flavor-copy">
+              <h3 class="flavor-name">Pineapple</h3>
+              <p class="flavor-sub">Capsule infused / rice paper</p>
+              <p>Bright pineapple, more cut than candy. Clean top note, steady capsule delivery.</p>
+              <div class="flavor-price-line"><strong>$4.75 <span>1g</span></strong><strong>$5.00 <span>2g</span></strong></div>
+            </div>
+            <div class="flavor-art" data-note="Pineapple">
+              <img class="flavor-box" src="assets/images/pineapple-chops.png" alt="Pineapple CHOP box" width="414" height="1024" loading="lazy" decoding="async" />
+              <img class="flavor-icon" src="assets/images/flavor-pineapple.png" alt="Pineapple flavor artwork" width="578" height="1024" loading="lazy" decoding="async" />
+            </div>
+          </article>
+
+          <article class="flavor-row vanilla reveal">
+            <div class="flavor-index"><i class="flavor-chip"></i><span>Warm finish</span></div>
+            <div class="flavor-copy">
+              <h3 class="flavor-name">Vanilla</h3>
+              <p class="flavor-sub">Capsule infused / rice paper</p>
+              <p>Soft vanilla, not bakery-sweet. Easy daily profile when you want flavor in the background.</p>
+              <div class="flavor-price-line"><strong>$4.75 <span>1g</span></strong><strong>$5.00 <span>2g</span></strong></div>
+            </div>
+            <div class="flavor-art" data-note="Vanilla">
+              <img class="flavor-box" src="assets/images/vanilla-chops.png" alt="Vanilla CHOP box" width="417" height="1024" loading="lazy" decoding="async" />
+              <img class="flavor-icon" src="assets/images/flavor-vanilla.png" alt="Vanilla flavor artwork" width="881" height="430" loading="lazy" decoding="async" />
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mechanism" id="mechanism">
+      <div class="section-inner mechanism-grid">
+        <div class="reveal">
+          <p class="section-label">Mechanism</p>
+          <h2 class="section-title">Flavor lives in the tip.</h2>
+          <p class="section-lede">Plain rice paper stays plain. The capsule is the activation point.</p>
+        </div>
+        <div class="mechanism-steps">
+          <div class="step reveal">
+            <div class="step-num">01</div>
+            <div><h3>Pack your blend</h3><p>Straight tube format. No pre-roll, no tobacco, no mystery fill.</p></div>
           </div>
-        </div>
-        <div class="flavor-card pineapple reveal">
-          <div class="flavor-dot"></div>
-          <div class="flavor-name">Pineapple</div>
-          <div class="flavor-sub">Capsule infused · Rice paper</div>
-          <p class="flavor-body">Bright pineapple — sweet and sharp, cutting through with a flavor that carries all the way through.</p>
-          <div class="flavor-prices">
-            <div class="flavor-price">$4.75 <span>1g · 3-pack</span></div>
-            <div class="flavor-price">$5.00 <span>2g · 3-pack</span></div>
+          <div class="step reveal">
+            <div class="step-num">02</div>
+            <div><h3>Pinch the capsule</h3><p>Flavor releases where it belongs: in the tip, not across the sheet.</p></div>
           </div>
-        </div>
-        <div class="flavor-card vanilla reveal">
-          <div class="flavor-dot"></div>
-          <div class="flavor-name">Vanilla</div>
-          <div class="flavor-sub">Capsule infused · Rice paper</div>
-          <p class="flavor-body">Smooth, warm vanilla — the classic profile that pairs with anything. Subtle enough to let your blend speak.</p>
-          <div class="flavor-prices">
-            <div class="flavor-price">$4.75 <span>1g · 3-pack</span></div>
-            <div class="flavor-price">$5.00 <span>2g · 3-pack</span></div>
+          <div class="step reveal">
+            <div class="step-num">03</div>
+            <div><h3>Keep the burn clean</h3><p>Rice paper carries the ritual. Capsule carries the profile.</p></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="section-y" id="how">
-    <div class="section-inner">
-      <div class="section-label reveal"><span class="section-line"></span><span class="section-tag">The capsule</span></div>
-      <h2 class="section-title reveal">HOW IT WORKS</h2>
-      <div class="how-grid">
-        <div class="how-card reveal">
-          <div class="how-num">01</div>
-          <div class="how-title">Flavor in the tip, not the sheet</div>
-          <p class="how-body">The rice paper is unflavored — all the flavor lives in the capsule tip. No artificial coating on the wrap, no inconsistency roll-to-roll.</p>
+    <section class="buy-section" id="buy">
+      <div class="section-inner buy-layout">
+        <div class="buy-panel reveal">
+          <h2>Pick your box.</h2>
+          <p>Single-box retail for the drawer. Wholesale routing for head shops and dispensary counters that need case packs.</p>
+          <div class="buy-actions">
+            <a class="btn btn-primary" href="/shop">Shop all flavors</a>
+            <a class="btn btn-secondary" href="/wholesale">Wholesale cases</a>
+          </div>
         </div>
-        <div class="how-card reveal">
-          <div class="how-num">02</div>
-          <div class="how-title">109mm straight tube</div>
-          <p class="how-body">Cali-style length. Same class as Vibes 1g/2g. Two sizes: 1g and 2g. Three per box so you can rotate flavors or stock a favorite.</p>
-        </div>
-        <div class="how-card reveal">
-          <div class="how-num">03</div>
-          <div class="how-title">Your blend, your pace</div>
-          <p class="how-body">Straight tubes — no pre-roll, no tobacco. Pack your own. The ritual stays consistent because the capsule delivers every time.</p>
+        <div class="price-ledger reveal" aria-label="Retail pricing">
+          <div class="ledger-row"><b>1g retail box</b><strong>$4.75</strong></div>
+          <div class="ledger-row"><b>2g retail box</b><strong>$5.00</strong></div>
+          <div class="ledger-row"><b>Box count</b><strong>3 Chops</strong></div>
+          <div class="ledger-row"><b>Compliance</b><strong>Adults 21+</strong></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="cta-section section-y">
-    <div class="cta-mesh"></div>
-    <div class="section-inner cta-inner">
-      <h2 class="cta-h2 reveal">PICK YOUR<br/><span>FLAVOR.</span></h2>
-      <p class="cta-sub reveal">Single retail boxes — one flavor, one size, three Chops. Not sold by the case on this site.</p>
-      <div class="prices-strip reveal">
-        <div class="price-item"><strong>$4.75</strong><em>1g · 3-pack box</em></div>
-        <div class="price-item"><strong>$5.00</strong><em>2g · 3-pack box</em></div>
+    <footer class="footer">
+      <div class="section-inner footer-inner">
+        <span class="footer-brand">SMASH<span>WRAPS</span> - THE CHOP</span>
+        <span>(c) 2026 Smash Wraps / Patent pending / Adults 21+ where required</span>
       </div>
-      <div class="reveal">
-        <a href="https://www.smashwraps.com/shop" class="btn-y" style="font-size:0.75rem;padding:1.1rem 2.5rem;">Shop all flavors at smashwraps.com</a>
-      </div>
-      <p class="legal reveal">Follow your local laws · Not for sale to minors · Patent pending</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <span class="footer-brand">SMASH<span>WRAPS</span> — THE CHOP</span>
-      <span class="footer-meta">© 2026 Smash Wraps &nbsp;·&nbsp; Patent pending &nbsp;·&nbsp; Adults 21+ where required</span>
-    </div>
-  </footer>
+    </footer>
+  </main>
 
   <script>
-    // nav scroll
-    window.addEventListener('scroll', () => {
-      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+    const nav = document.getElementById("nav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 48);
     }, { passive: true });
 
-    // cursor glow
-    const glow = document.getElementById('cursor-glow');
-    window.addEventListener('mousemove', e => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
-      glow.style.opacity = '1';
-    }, { passive: true });
-    window.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
-
-    // marquee
-    const items = [
-      { text: 'ICED WATERMELON', dot: 'p' },
-      { text: 'PASSION FRUIT', dot: 'v' },
-      { text: 'PINEAPPLE', dot: 'l' },
-      { text: 'VANILLA', dot: 'a' },
-      { text: 'THE CHOP', dot: 'y' },
-      { text: '1G · 2G', dot: 'y' },
-      { text: '3 CHOPS / BOX', dot: 'y' },
-      { text: '109MM CALI-STYLE', dot: 'y' },
-      { text: 'CAPSULE INFUSED', dot: 'y' },
-      { text: 'RICE PAPER TUBES', dot: 'y' },
-    ];
-    const all = [...items,...items,...items];
-    document.getElementById('mq-track').innerHTML = all.map(i =>
-      `<span class="mq-item"><span class="mq-dot ${i.dot}"></span>${i.text}</span>`
-    ).join('');
-
-    // scroll reveals
-    const obs = new IntersectionObserver(es => {
-      es.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 60);
-          obs.unobserve(e.target);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add("visible"), index * 55);
+          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
   </script>
 </body>
 </html>
