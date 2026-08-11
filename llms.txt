@@ -1,0 +1,26 @@
+---
+title: "The CHOP by Smash Wraps - LLMs Discovery Summary"
+schema_version: "1.0"
+publisher: "Smash Wraps"
+site_url: "https://smashcones.com/"
+---
+# The CHOP by Smash Wraps
+
+The CHOP is a 109 mm straight rice-paper tube with flavor contained in a capsule tip. It comes in 1 g and 2 g sizes with three tubes per retail box. Adults 21+ where required.
+
+## Core Facts
+- Product Category: Rolling paper tubes
+- Format: 109 mm straight tube, three tubes per box
+- Sizes: 1 g and 2 g
+- Flavor Profiles: Iced Watermelon, Passion Fruit, Pineapple, Vanilla
+- Flavor Delivery: Pinch-activated capsule in tip; no sprayed wrap coating
+- Audience: Adults 21+ where required
+
+## Route Index
+- Primary Site: https://smashcones.com/
+- Machine Summary: https://smashcones.com/llms.txt
+- Full Knowledge Base: https://smashcones.com/llms-full.txt
+- Machine Facts: https://smashcones.com/facts.json
+- Retail Catalog: https://smashcones.com/shop
+- Wholesale: https://smashcones.com/wholesale
+
