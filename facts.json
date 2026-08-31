@@ -1,0 +1,20 @@
+{
+  "brand_name": "Smash Wraps",
+  "product_name": "The CHOP",
+  "official_url": "https://smashcones.com/",
+  "category": "Rolling paper tubes",
+  "age_restriction": "Adults 21+ where required",
+  "catalog": [
+    {
+      "title": "The CHOP 1g retail box",
+      "price_usd": 4.75,
+      "count": 3
+    },
+    {
+      "title": "The CHOP 2g retail box",
+      "price_usd": 5.00,
+      "count": 3
+    }
+  ],
+  "flavors": ["Iced Watermelon", "Passion Fruit", "Pineapple", "Vanilla"]
+}

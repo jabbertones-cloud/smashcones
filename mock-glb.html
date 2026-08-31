@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHOP GLB Hero Mock</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="fetch" href="assets/ChopAnimation-single-full-pruned.glb" crossorigin />
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js"></script>
+  <style>
+    :root{--bg:#090907;--ink:#f7f3e7;--muted:#aaa394;--line:rgba(247,243,231,.12);--yellow:#f6c115;--pink:#f35b91;--green:#94d82d;--violet:#b47cff;--flavor:var(--pink);--alt:var(--yellow);--p:0}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;overflow-x:hidden}
+    .topbar{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2rem;background:linear-gradient(#090907,rgba(9,9,7,.72),transparent)}
+    .brand{font-family:"Bebas Neue",sans-serif;font-size:1.55rem;letter-spacing:.12em}.brand span{color:var(--yellow)}
+    .tag{font-family:"Space Mono",monospace;font-size:.58rem;text-transform:uppercase;letter-spacing:.22em;color:var(--yellow)}
+    .mock{position:relative;min-height:420vh;padding:6rem 2rem 4rem;isolation:isolate}
+    .mock::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 48% 38% at 72% 38%,color-mix(in srgb,var(--flavor) 20%,transparent),transparent 65%),radial-gradient(ellipse 42% 36% at 17% 42%,rgba(246,193,21,.12),transparent 64%),linear-gradient(100deg,#12100b,#070707 58%);z-index:-3}
+    .mock::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(246,193,21,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:86px 86px;mask:linear-gradient(90deg,#000,rgba(0,0,0,.86) 48%,transparent 100%);z-index:-2}
+    .pin{position:sticky;top:5.5rem;min-height:calc(100vh - 6rem);display:grid;grid-template-columns:minmax(22rem,.72fr) minmax(34rem,1.28fr);gap:clamp(2rem,5vw,6rem);align-items:center;max-width:94rem;margin:auto}
+    .copy{position:relative;z-index:3;max-width:34rem}
+    .eyebrow{display:inline-flex;gap:.55rem;align-items:center;padding:.45rem .9rem;border:1px solid rgba(246,193,21,.28);border-radius:99px;color:var(--yellow);font-family:"Space Mono",monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;background:rgba(246,193,21,.075)}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 22px var(--yellow)}
+    h1{margin-top:1.25rem;font-family:"Bebas Neue",sans-serif;font-size:clamp(5rem,8.5vw,8rem);line-height:.82;letter-spacing:.02em}
+    h1 span{color:var(--yellow)}
+    .lead{margin-top:1.1rem;color:var(--muted);font-size:1.05rem;line-height:1.7;max-width:31rem}.lead strong{color:var(--ink)}
+    .steps{position:relative;min-height:12rem;margin-top:2rem}
+    .step{position:absolute;inset:0 auto auto 0;max-width:32rem;opacity:0;transform:translateY(18px);transition:opacity .38s ease,transform .38s ease}
+    .step.active{opacity:1;transform:none}
+    .kicker{font-family:"Space Mono",monospace;font-size:.56rem;letter-spacing:.23em;text-transform:uppercase;color:var(--yellow)}
+    h2{font-family:"Bebas Neue",sans-serif;font-size:clamp(2.2rem,3.5vw,3.5rem);line-height:.94;margin:.55rem 0;color:var(--ink)}
+    .body{color:var(--muted);line-height:1.62}
+    .meter{width:min(30rem,100%);height:2px;background:rgba(255,255,255,.12);margin:1.1rem 0}.meter span{display:block;width:calc(var(--p) * 100%);height:100%;background:var(--yellow);box-shadow:0 0 28px rgba(246,193,21,.45)}
+    .pills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.45rem}.pills button{height:2rem;border:1px solid var(--line);border-radius:99px;background:transparent;color:#655f54;font-family:"Space Mono",monospace;font-size:.52rem;letter-spacing:.15em;text-transform:uppercase}.pills button.active{color:var(--ink);border-color:color-mix(in srgb,var(--flavor) 65%,transparent);background:color-mix(in srgb,var(--flavor) 17%,transparent)}
+    .stage{position:relative;min-height:clamp(38rem,58vw,54rem);display:grid;place-items:center;isolation:isolate}
+    .stage::before{content:"";position:absolute;left:50%;bottom:11%;width:min(112%,58rem);height:clamp(14rem,23vw,21rem);border-radius:999px;background:radial-gradient(ellipse at 50% 42%,color-mix(in srgb,var(--flavor) 24%,transparent),transparent 45%),linear-gradient(90deg,rgba(255,255,255,.055),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.07);box-shadow:0 30px 100px rgba(0,0,0,.64),0 0 72px color-mix(in srgb,var(--flavor) 16%,transparent);transform:translateX(-50%) rotate(-7deg);z-index:-2}
+    .burst{position:absolute;inset:0;pointer-events:none;z-index:4;opacity:0;transition:opacity .18s ease}
+    .burst::before{content:"";position:absolute;left:42%;top:78%;width:18rem;height:18rem;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--flavor) 42%,transparent),transparent 58%);filter:blur(4px);transform:translate(-50%,-50%) scale(calc(.55 + var(--burst-progress,0) * .62));opacity:calc(var(--burst-progress,0) * .86)}
+    .stage.is-bursting .burst{opacity:1}
+    .burst i{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);border-radius:50%;border:1px solid color-mix(in srgb,var(--c) 62%,transparent);background:radial-gradient(circle at 34% 34%,color-mix(in srgb,var(--c) 82%,white),transparent 18%),radial-gradient(circle,color-mix(in srgb,var(--c) 23%,transparent),transparent 65%);box-shadow:0 0 34px color-mix(in srgb,var(--c) 24%,transparent);transform:translate(-50%,-50%) scale(calc(.28 + var(--burst-progress,0) * var(--m,1)));opacity:calc(var(--burst-progress,0) * .96)}
+    .model-wrap{width:min(112%,48rem);height:clamp(38rem,58vw,52rem);transform:translate3d(2rem,calc(var(--p) * -18px),0) rotate(1deg)}
+    model-viewer{width:100%;height:100%;--poster-color:transparent;filter:drop-shadow(0 38px 38px rgba(0,0,0,.6))}
+    .label{position:absolute;right:clamp(0rem,3vw,2.2rem);top:68%;padding:.74rem 1rem;border-radius:99px;background:var(--yellow);color:#050505;font-family:"Space Mono",monospace;font-size:.56rem;font-weight:700;letter-spacing:.19em;text-transform:uppercase;transform:rotate(-6deg);box-shadow:0 0 36px rgba(246,193,21,.32)}
+    .research{position:fixed;left:2rem;bottom:1.35rem;z-index:10;font-family:"Space Mono",monospace;font-size:.52rem;letter-spacing:.14em;color:#746d61;text-transform:uppercase}
+    @keyframes pop{0%,100%{opacity:.45;transform:translate(-50%,-50%) scale(.84)}45%{opacity:1;transform:translate(-50%,-50%) scale(1.14)}}
+    @media(max-width:900px){.mock{min-height:auto}.pin{position:relative;top:auto;grid-template-columns:1fr;gap:0}.steps{min-height:0}.step{position:relative;display:none}.step.active{display:block}.model-wrap{width:100%;height:30rem;transform:none}.stage{min-height:29rem;margin-top:-3rem}.research{display:none}}
+    @media(max-width:640px){.topbar{padding:1rem 2rem}.brand{font-size:1.3rem}.tag{font-size:.5rem}.mock{padding:5.4rem 2rem 2rem}.eyebrow{font-size:.5rem;letter-spacing:.16em}h1{font-size:4.9rem;margin-top:.95rem}.lead{font-size:1rem;line-height:1.55}.steps{margin-top:1.45rem}h2{font-size:2.3rem}.body{line-height:1.5}.pills{grid-template-columns:repeat(4,minmax(0,1fr))}.pills button{font-size:.48rem}.stage{min-height:27rem;margin-top:-2rem}.model-wrap{height:28rem}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><div><div class="brand">SMASH<span>WRAPS</span></div><div class="tag">GLB hero mock</div></div><div class="tag">noindex prototype</div></header>
+  <main class="mock" id="mock">
+    <section class="pin">
+      <div class="copy">
+        <div class="eyebrow"><span class="dot"></span>One-flavor animation test</div>
+        <h1>THE<br><span>CHOP</span></h1>
+        <p class="lead"><strong>One flavor. One motion.</strong> Box opens, tube lifts, capsule placement stays readable, and the burst moment gets the focus.</p>
+        <div class="steps" aria-live="polite">
+          <article class="step active" data-step data-flavor="watermelon"><div class="kicker">Scroll 01 - sealed</div><h2>Flavor starts sealed.</h2><p class="body">A single pack holds the frame. No flavor wall, no extra boxes, no confusion.</p></article>
+          <article class="step" data-step data-flavor="passion"><div class="kicker">Scroll 02 - reveal</div><h2>The box opens clean.</h2><p class="body">Motion shows the product first: paper tubes, capsule idea, one focused flavor profile.</p></article>
+          <article class="step" data-step data-flavor="pineapple"><div class="kicker">Scroll 03 - tube</div><h2>The tube becomes hero.</h2><p class="body">Camera leaves room for copy while the tube carries the placement story.</p></article>
+          <article class="step" data-step data-flavor="vanilla"><div class="kicker">Scroll 04 - burst</div><h2>One squeeze. Visible payoff.</h2><p class="body">Capsule effect reads as a controlled burst, not coating or sprayed paper.</p></article>
+        </div>
+        <div class="meter"><span></span></div>
+        <div class="pills"><button class="active" data-pill>Place</button><button data-pill>Burst</button><button data-pill>Clean</button><button data-pill>Choose</button></div>
+      </div>
+      <div class="stage" aria-label="CHOP GLB mock stage">
+        <div class="burst" aria-hidden="true"><i style="--x:39%;--y:76%;--s:4.6rem;--c:var(--flavor);--m:1.25"></i><i style="--x:46%;--y:72%;--s:3.2rem;--c:var(--yellow);--m:1"></i><i style="--x:35%;--y:83%;--s:3.8rem;--c:var(--green);--m:1.1"></i><i style="--x:50%;--y:82%;--s:2.8rem;--c:var(--violet);--m:.9"></i><i style="--x:43%;--y:88%;--s:5.6rem;--c:var(--flavor);--m:1.4"></i></div>
+        <div class="model-wrap">
+          <model-viewer id="chopModel" src="assets/ChopAnimation-single-full-pruned.glb" alt="Animated one-flavor CHOP GLB placement mock through flavor burst" camera-orbit="-8deg 66deg 1.18m" camera-target="-0.03m 0.13m 0.02m" field-of-view="18deg" exposure="1.05" shadow-intensity=".6" scale="3.05 3.05 3.05" interaction-prompt="none" touch-action="pan-y" loading="eager" reveal="auto" autoplay></model-viewer>
+        </div>
+        <div class="label">capsule burst</div>
+      </div>
+    </section>
+  </main>
+  <div class="research">Noindex preview - single flavor only</div>
+  <script>
+    (function(){var root=document.documentElement,mock=document.getElementById('mock'),stage=document.querySelector('.stage'),steps=[].slice.call(document.querySelectorAll('[data-step]')),pills=[].slice.call(document.querySelectorAll('[data-pill]')),model=document.getElementById('chopModel'),colors={watermelon:['#f35b91','#f6c115','-8deg 66deg 1.18m'],passion:['#b47cff','#f35b91','-4deg 65deg 1.16m'],pineapple:['#94d82d','#f4d46a','-12deg 68deg 1.2m'],vanilla:['#f3d8a0','#f6c115','2deg 66deg 1.18m']},active=0,ticking=false;function setStep(i){active=Math.max(0,Math.min(steps.length-1,i));steps.forEach(function(s,n){s.classList.toggle('active',n===active)});pills.forEach(function(p,n){p.classList.toggle('active',n===active)});var c=colors[steps[active].dataset.flavor]||colors.watermelon;root.style.setProperty('--flavor',c[0]);root.style.setProperty('--alt',c[1]);if(model)model.setAttribute('camera-orbit',c[2])}function update(){ticking=false;var travel=Math.max(1,mock.offsetHeight-innerHeight),p=Math.max(0,Math.min(1,-mock.getBoundingClientRect().top/travel));root.style.setProperty('--p',p.toFixed(3));var next=Math.min(steps.length-1,Math.floor(p*steps.length));if(next!==active)setStep(next)}function queue(){if(ticking)return;ticking=true;requestAnimationFrame(update)}function syncBurst(){if(model&&stage){var d=model.duration||11.333,t=model.currentTime||0,start=d-2.35,raw=(t-start)/(d-start);var burst=Math.max(0,Math.min(1,raw));root.style.setProperty('--burst-progress',burst.toFixed(3));stage.classList.toggle('is-bursting',burst>.05)}requestAnimationFrame(syncBurst)}if(model){model.addEventListener('load',function(){var names=model.availableAnimations||[];model.animationName=names.indexOf('FullChopAction')>-1?'FullChopAction':names[0];if(model.play)model.play();syncBurst()})}addEventListener('scroll',queue,{passive:true});addEventListener('resize',queue);setStep(0);queue()})();
+  </script>
+</body>
+</html>
