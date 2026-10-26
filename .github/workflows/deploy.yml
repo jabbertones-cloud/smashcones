@@ -2,13 +2,24 @@ name: Deploy to Cloudflare Pages
 on:
   push:
     branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: smashcones-production-deploy
+  cancel-in-progress: false
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, macOS, ARM64, smat-m1]
+    timeout-minutes: 20
     permissions:
       contents: read
       deployments: write
     steps:
+      - name: Enforce physical M1
+        run: |
+          test "$(hostname)" = "Tatsheens-Mini"
+          test "$(uname -s)" = "Darwin"
+          test "$(uname -m)" = "arm64"
       - uses: actions/checkout@v4
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
