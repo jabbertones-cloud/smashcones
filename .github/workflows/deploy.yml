@@ -1,28 +1,21 @@
-name: Deploy to Cloudflare Pages
+name: Smashcones Release Handoff
+# Production Pages deployment is performed on M2 with authorized Cloudflare OAuth.
+# GitHub-hosted deployment and repository API-token deployment are disabled.
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 permissions:
   contents: read
-concurrency:
-  group: smashcones-production-deploy
-  cancel-in-progress: false
 jobs:
-  deploy:
+  handoff:
     runs-on: [self-hosted, macOS, ARM64, smat-m1]
-    timeout-minutes: 20
-    permissions:
-      contents: read
-      deployments: write
+    timeout-minutes: 5
     steps:
-      - name: Enforce physical M1
+      - name: Verify physical M1
         run: |
           test "$(hostname)" = "Tatsheens-Mini"
-          test "$(uname -s)" = "Darwin"
           test "$(uname -m)" = "arm64"
-      - uses: actions/checkout@v4
-      - name: Deploy to Cloudflare Pages with Wrangler
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: 793e209ea35f2e064b4b49b168a26c22
-        run: npx --yes wrangler@4 pages deploy . --project-name smashcones
+      - name: Show exact release handoff
+        run: |
+          echo "Production deploy authority: M2 Cloudflare OAuth"
+          echo "Release revision: $GITHUB_SHA"
+          echo "This job does not deploy or assert production acceptance."
