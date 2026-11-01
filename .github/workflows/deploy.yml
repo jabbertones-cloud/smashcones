@@ -1,20 +1,33 @@
 name: Smashcones Release Handoff
 # Production Pages deployment is performed on M2 with authorized Cloudflare OAuth.
-# GitHub-hosted deployment and repository API-token deployment are disabled.
+# This PUBLIC repository workflow is a read-only handoff. Neither PR nor manual
+# dispatch deploys anything or accesses Cloudflare deployment credentials.
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/deploy.yml'
+      - 'scripts/test_handoff_runner_policy.py'
 permissions:
   contents: read
 jobs:
   handoff:
-    runs-on: [self-hosted, macOS, ARM64, smat-m1]
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-      - name: Verify physical M1
+      - name: Require isolated free GitHub standard runner
+        shell: bash
         run: |
-          test "$(hostname)" = "Tatsheens-Mini"
-          test "$(uname -m)" = "arm64"
+          set -euo pipefail
+          test "${RUNNER_ENVIRONMENT:-}" = "github-hosted"
+          test "${RUNNER_OS:-}" = "Linux"
+          test "${RUNNER_ARCH:-}" = "X64"
+          test "$(uname -s)" = "Linux"
+      - uses: actions/checkout@v4
+      - name: Verify no-deploy runner and handoff contract
+        run: python3 -m unittest discover -s scripts -p 'test_handoff_runner_policy.py'
       - name: Show exact release handoff
+        if: github.event_name == 'workflow_dispatch'
         run: |
           echo "Production deploy authority: M2 Cloudflare OAuth"
           echo "Release revision: $GITHUB_SHA"
